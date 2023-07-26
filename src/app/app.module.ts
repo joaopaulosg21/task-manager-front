@@ -18,6 +18,8 @@ import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { HttpErrorInterceptor } from './core/interceptor/http-error.interceptor';
 import { LoginComponent } from './components/login/login.component';
 import { AllTasksComponent } from './components/all-tasks/all-tasks.component';
+import { MatTableModule } from "@angular/material/table";
+import { MatPaginatorModule } from "@angular/material/paginator";
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { AllTasksComponent } from './components/all-tasks/all-tasks.component';
     MatFormFieldModule,
     MatCardModule,
     MatInputModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: [
     {
