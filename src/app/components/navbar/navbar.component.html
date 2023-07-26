@@ -9,7 +9,7 @@
               <button mat-menu-item routerLink="/tasks/find/all"> Adicionar Tarefa </button>
               <button mat-menu-item routerLink="/tasks/find/all"> Ver todas </button>
             </mat-menu>
-          <button mat-button> Logout </button>
+          <button mat-button (click)="logout()"> Logout </button>
         </div>
       <ng-template #semtoken>
         <button mat-button routerLink="/conta/registro"> Criar conta</button>

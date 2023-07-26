@@ -1,10 +1,9 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
+import { map, merge, startWith, switchMap } from "rxjs";
 import { LoginTokenService } from 'src/app/services/login-token.service';
 import { TasksService } from 'src/app/services/tasks.service';
 import { Task } from 'src/app/types/task.type';
-import { Observable, map, merge, startWith, switchMap } from "rxjs";
-import { allTasksResponse } from 'src/app/types/allTasksResponse.type';
 
 @Component({
   selector: 'app-all-tasks',
@@ -46,5 +45,4 @@ export class AllTasksComponent implements AfterViewInit{
 
   //Table config
   displayedColumns: string[] = ['title', 'description', 'createdAt', 'limit_date',"status"];
-
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { ContaService } from 'src/app/services/conta.service';
 import { LoginTokenService } from 'src/app/services/login-token.service';
 import { Login } from 'src/app/types/login.type';
@@ -12,7 +13,8 @@ import { Login } from 'src/app/types/login.type';
 export class LoginComponent implements OnInit{
 
   constructor(private contaService:ContaService, 
-    private snackBar:MatSnackBar, private tokenService:LoginTokenService){}
+    private snackBar:MatSnackBar, private tokenService:LoginTokenService,
+    private router:Router){}
 
   ngOnInit(): void {
   }
@@ -27,6 +29,7 @@ export class LoginComponent implements OnInit{
     this.contaService.login(login).subscribe((data:any) => {
       this.tokenService.setToken(data.object);
       this.snackBar.open("Login bem sucedido","",{duration:2000});
+      this.router.navigateByUrl("/tasks/find/all");
     });
   }
 }
