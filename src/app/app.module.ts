@@ -20,6 +20,9 @@ import { LoginComponent } from './components/login/login.component';
 import { AllTasksComponent } from './components/all-tasks/all-tasks.component';
 import { MatTableModule } from "@angular/material/table";
 import { MatPaginatorModule } from "@angular/material/paginator";
+import { RegistrarTaskComponent } from './components/registrar-task/registrar-task.component';
+import { MatDatepickerModule } from "@angular/material/datepicker";
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,8 @@ import { MatPaginatorModule } from "@angular/material/paginator";
     NavbarComponent,
     RegistrarContaComponent,
     LoginComponent,
-    AllTasksComponent
+    AllTasksComponent,
+    RegistrarTaskComponent
     
   ],
   imports: [
@@ -44,7 +48,9 @@ import { MatPaginatorModule } from "@angular/material/paginator";
     MatInputModule,
     MatSnackBarModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [
     {

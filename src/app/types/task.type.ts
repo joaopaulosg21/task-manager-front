@@ -6,7 +6,7 @@ export type Task = {
     title:string;
     description:string;
     createdAt?:Date;
-    limit_date:Date;
-    user:User;
+    limit_date:string;
+    user?:User;
     status?:Status;
 }

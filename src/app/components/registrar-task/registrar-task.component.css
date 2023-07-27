@@ -1,0 +1,27 @@
+div{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+.card-registro {
+    width: 20%;
+}
+.card-content {
+   display: flex;
+   flex-direction: column;
+}
+
+.card-header {
+    display: flex;
+    justify-content: center;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: center;
+}
+
+.card-button {
+    width: 50%;
+    height: 100%;
+}
