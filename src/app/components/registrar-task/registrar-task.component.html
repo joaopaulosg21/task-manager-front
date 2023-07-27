@@ -7,17 +7,17 @@
       <mat-card-content class="card-content">
   
         <mat-form-field appearance="fill">
-          <mat-label>Title</mat-label>
+          <mat-label>Titulo</mat-label>
           <input matInput required #title>
         </mat-form-field>
   
         <mat-form-field appearance="fill">
-          <mat-label>Description</mat-label>
+          <mat-label>Descrição</mat-label>
           <textarea matInput #description></textarea>
         </mat-form-field>
 
         <mat-form-field color="primary">
-            <mat-label>Escola a data limite da tarefa</mat-label>
+            <mat-label>Escolha a data limite da tarefa</mat-label>
             <input matInput [matDatepicker]="picker1" disabled (dateChange)="getDate($event)">
             <mat-hint>DD/MM/YYYY</mat-hint>
             <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>

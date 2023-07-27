@@ -23,6 +23,8 @@ import { MatPaginatorModule } from "@angular/material/paginator";
 import { RegistrarTaskComponent } from './components/registrar-task/registrar-task.component';
 import { MatDatepickerModule } from "@angular/material/datepicker";
 import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
+import { MatDialogModule } from "@angular/material/dialog";
+import { DialogTaskComponent } from './components/registrar-task/dialog/dialog-task.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
     RegistrarContaComponent,
     LoginComponent,
     AllTasksComponent,
-    RegistrarTaskComponent
+    RegistrarTaskComponent,
+    DialogTaskComponent
     
   ],
   imports: [
@@ -50,7 +53,8 @@ import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
     MatTableModule,
     MatPaginatorModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatDialogModule
   ],
   providers: [
     {
