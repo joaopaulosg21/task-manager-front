@@ -22,7 +22,7 @@ import { MatTableModule } from "@angular/material/table";
 import { MatPaginatorModule } from "@angular/material/paginator";
 import { RegistrarTaskComponent } from './components/registrar-task/registrar-task.component';
 import { MatDatepickerModule } from "@angular/material/datepicker";
-import { MatNativeDateModule } from '@angular/material/core';
+import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -57,6 +57,9 @@ import { MatNativeDateModule } from '@angular/material/core';
       provide:HTTP_INTERCEPTORS,
       useClass:HttpErrorInterceptor,
       multi:true
+    },
+    {
+      provide: MAT_DATE_LOCALE,useValue: 'pt-br'
     }
   ],
   bootstrap: [AppComponent]
