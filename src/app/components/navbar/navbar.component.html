@@ -2,13 +2,10 @@
     <mat-toolbar color="primary">
       <span>Task Manager</span>
         <div *ngIf="(token$ | async) as token;else semtoken" class="spacer"> 
-          <div >
-            <button mat-button [matMenuTriggerFor]="tasks">Tarefas</button>
+          <div>
+            <button mat-button routerLink="/tasks/registro"> Adicionar Tarefa </button>
+            <button mat-button routerLink="/tasks/find/all"> Ver todas </button>
           </div>
-            <mat-menu #tasks="matMenu">
-              <button mat-menu-item routerLink="/tasks/registro"> Adicionar Tarefa </button>
-              <button mat-menu-item routerLink="/tasks/find/all"> Ver todas </button>
-            </mat-menu>
           <button mat-button (click)="logout()"> Logout </button>
         </div>
       <ng-template #semtoken>
