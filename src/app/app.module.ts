@@ -25,6 +25,8 @@ import { MatDatepickerModule } from "@angular/material/datepicker";
 import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
 import { MatDialogModule } from "@angular/material/dialog";
 import { DialogTaskComponent } from './components/registrar-task/dialog/dialog-task.component';
+import { DialogEditTask } from './components/all-tasks/dialog/dialog-edit-task.component';
+import { MatSelectModule } from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -35,8 +37,8 @@ import { DialogTaskComponent } from './components/registrar-task/dialog/dialog-t
     LoginComponent,
     AllTasksComponent,
     RegistrarTaskComponent,
-    DialogTaskComponent
-    
+    DialogTaskComponent,
+    DialogEditTask
   ],
   imports: [
     BrowserModule,
@@ -54,7 +56,8 @@ import { DialogTaskComponent } from './components/registrar-task/dialog/dialog-t
     MatPaginatorModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSelectModule
   ],
   providers: [
     {

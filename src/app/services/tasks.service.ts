@@ -24,4 +24,18 @@ export class TasksService {
 
     return this.http.post(this.api + "/tasks/",task,{headers:header});
   }
+
+  startTask(taskId:number, token:string) {
+    console.log(taskId);
+    const header = new HttpHeaders().set('Authorization', 'Bearer ' + token);
+
+    return this.http.patch(this.api + "/tasks/start/" + taskId,null,{headers:header});
+  }
+
+  finishTask(taskId:number, token:string) {
+    
+    const header = new HttpHeaders().set('Authorization', 'Bearer ' + token);
+
+    return this.http.patch(this.api + "/tasks/finish/" + taskId,null,{headers:header});
+  }
 }

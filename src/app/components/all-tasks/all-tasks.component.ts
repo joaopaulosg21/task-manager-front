@@ -1,9 +1,11 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { map, merge, startWith, switchMap } from "rxjs";
 import { LoginTokenService } from 'src/app/services/login-token.service';
 import { TasksService } from 'src/app/services/tasks.service';
 import { Task } from 'src/app/types/task.type';
+import { DialogEditTask } from './dialog/dialog-edit-task.component';
 
 @Component({
   selector: 'app-all-tasks',
@@ -14,7 +16,7 @@ export class AllTasksComponent implements AfterViewInit{
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(private tasksService:TasksService, 
-    private tokenService:LoginTokenService) {}
+    private tokenService:LoginTokenService, private dialog:MatDialog) {}
 
   tasks:Task[] = [];
   token:string = "";
@@ -44,5 +46,11 @@ export class AllTasksComponent implements AfterViewInit{
   }
 
   //Table config
-  displayedColumns: string[] = ['title', 'description', 'createdAt', 'limit_date',"status"];
+  displayedColumns: string[] = ['title', 'description', 'createdAt', 'limit_date',"status","edit"];
+
+  openDialog(task:any) {
+    this.dialog.open(DialogEditTask,{
+      data:task
+    });
+  }
 }

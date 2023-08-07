@@ -1,0 +1,28 @@
+<h1 mat-dialog-title>Editar Tarefa</h1>
+<div mat-dialog-content class="card-registro">
+  <mat-form-field appearance="fill">
+    <mat-label>Titulo</mat-label>
+    <input matInput [value]="task.title" disabled>
+  </mat-form-field>
+      
+  <mat-form-field appearance="fill">
+    <mat-label>Descrição</mat-label>
+    <textarea matInput [value]="task.description" disabled></textarea>
+  </mat-form-field>
+    
+  <mat-form-field color="primary">
+    <mat-label>Data limite</mat-label>
+    <input matInput [value]="task.limit_date" disabled>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>{{task.status}}</mat-label>
+    <mat-select (valueChange)="saveStatus($event)">
+      <mat-option *ngFor="let s of status" [value]="s" > {{s}} </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="salvar(task.id)">Salvar</button>
+</div>
